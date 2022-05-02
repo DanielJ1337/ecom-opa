@@ -42,6 +42,22 @@ const ProfileInformation = styled.div`
   flex: 0.09;
 `;
 
+const CartIcon = styled.img`
+  cursor: pointer;
+  display: relative;
+`;
+
+const BasketSizeContainer = styled.div`
+  background: var(--orange);
+  color: var(--white);
+  width: 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 34%;
+  right: 5%;
+`;
+
 const ProfileImage = styled.img`
   height: 60px;
   width: 60px;
@@ -56,4 +72,6 @@ export {
   LinkItem,
   ProfileInformation,
   ProfileImage,
+  CartIcon,
+  BasketSizeContainer,
 };

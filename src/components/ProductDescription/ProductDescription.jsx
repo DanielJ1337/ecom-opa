@@ -53,7 +53,10 @@ const ProductDescription = () => {
             +
           </Button>
         </ItemCounterWrapper>
-        <ATCButton>
+        <ATCButton
+          onClick={(e) => {
+            product.addToCart();
+          }}>
           <div style={{ marginRight: "2rem" }}>
             <svg width='22' height='20' xmlns='http://www.w3.org/2000/svg'>
               <path

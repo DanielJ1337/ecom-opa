@@ -1,18 +1,14 @@
 import "./App.css";
 
 // import components
-import { Navbar, ProductLightbox, Product } from "../../components";
-
-import { ProductProvider } from "../../lib/productContext";
+import { Navbar, Product } from "../../components";
 
 function App() {
   return (
-    <ProductProvider>
-      <div className='App'>
-        <Navbar />
-        <Product />
-      </div>
-    </ProductProvider>
+    <div className='App'>
+      <Navbar />
+      <Product />
+    </div>
   );
 }
 

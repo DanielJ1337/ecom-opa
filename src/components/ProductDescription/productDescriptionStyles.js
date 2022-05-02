@@ -52,7 +52,6 @@ const ProductDiscount = styled.p`
 const CTAWrapper = styled.div`
   margin-top: 3rem;
   display: flex;
-  gap: 2rem;
 `;
 
 const ItemCounterWrapper = styled.div`
@@ -62,7 +61,7 @@ const ItemCounterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
-  flex: 0.4;
+  flex: 0.35;
   border-radius: 12px;
 
   p:nth-child(2) {
@@ -89,12 +88,13 @@ const ATCButton = styled.button`
   border-radius: 8px;
   display: flex;
   align-items: center;
-  flex: 0.6;
+  flex: 0.55;
   justify-content: center;
   font-family: inherit;
   font-size: 1.6rem;
   width: 100%;
   margin: 0 auto;
+  cursor: pointer;
 
   svg path {
     fill: white;

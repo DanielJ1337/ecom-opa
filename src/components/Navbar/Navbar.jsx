@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import logo from "../../assets/images/logo.svg";
 import cart from "../../assets/images/icon-cart.svg";
@@ -11,10 +11,15 @@ import {
   LinkItem,
   ProfileInformation,
   ProfileImage,
+  CartIcon,
+  BasketSizeContainer,
 } from "./navbarStyles";
 import Cart from "../Cart/Cart";
+import { useProductProvider } from "../../lib/productContext";
 
 const Navbar = () => {
+  const [toggleCart, setToggleCart] = useState(false);
+  const product = useProductProvider();
   return (
     <NavWrapper>
       <LogoContainer>
@@ -28,8 +33,16 @@ const Navbar = () => {
         <LinkItem>Contact</LinkItem>
       </LinkContainer>
       <ProfileInformation>
-        <img style={{ cursor: "pointer" }} src={cart} alt='cart-logo' />
-        <Cart />
+        <CartIcon
+          onClick={(e) => {
+            toggleCart ? setToggleCart(false) : setToggleCart(true);
+          }}
+          src={cart}
+          alt='cart-logo'
+        />
+        <BasketSizeContainer>{product.cartSize}</BasketSizeContainer>
+        {toggleCart && <Cart />}
+
         <ProfileImage src={profileImg}></ProfileImage>
       </ProfileInformation>
     </NavWrapper>

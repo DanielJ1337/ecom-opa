@@ -1,11 +1,11 @@
-import react, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const product = useProductProvider();
+  const productValue = useProductProvider();
   return (
-    <ProductContext.Provider value={product}>
+    <ProductContext.Provider value={productValue}>
       {children}
     </ProductContext.Provider>
   );
@@ -17,6 +17,7 @@ export const useProduct = () => {
 
 export const useProductProvider = () => {
   const [productAmount, setProductAmount] = useState(0);
+  const [cartSize, setCartSize] = useState(0);
 
   const increaseAmount = () => {
     setProductAmount((prevItem) => prevItem + 1);
@@ -30,8 +31,16 @@ export const useProductProvider = () => {
     }
   };
 
+  const addToCart = () => {
+    setCartSize(productAmount);
+    console.log("cartsize was set to: ", cartSize);
+    console.log("value of productAmount is: ", productAmount);
+  };
+
   return {
     productAmount,
+    cartSize,
+    addToCart,
     increaseAmount,
     decreaseAmount,
   };
