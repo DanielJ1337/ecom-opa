@@ -27,7 +27,7 @@ const Navbar = () => {
         <LinkItem>Contact</LinkItem>
       </LinkContainer>
       <ProfileInformation>
-        <img src={cart} alt='cart-logo' />
+        <img style={{ cursor: "pointer" }} src={cart} alt='cart-logo' />
         <ProfileImage src={profileImg}></ProfileImage>
       </ProfileInformation>
     </NavWrapper>

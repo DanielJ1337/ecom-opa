@@ -1,12 +1,13 @@
 import "./App.css";
 
 // import components
-import { Navbar } from "../../components";
+import { Navbar, ProductLightbox, Product } from "../../components";
 
 function App() {
   return (
     <div className='App'>
       <Navbar />
+      <Product />
     </div>
   );
 }

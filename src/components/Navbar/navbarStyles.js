@@ -40,6 +40,7 @@ const ProfileImage = styled.img`
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  cursor: pointer;
 `;
 
 export {
