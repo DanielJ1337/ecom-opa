@@ -3,12 +3,16 @@ import "./App.css";
 // import components
 import { Navbar, ProductLightbox, Product } from "../../components";
 
+import { ProductProvider } from "../../lib/productContext";
+
 function App() {
   return (
-    <div className='App'>
-      <Navbar />
-      <Product />
-    </div>
+    <ProductProvider>
+      <div className='App'>
+        <Navbar />
+        <Product />
+      </div>
+    </ProductProvider>
   );
 }
 

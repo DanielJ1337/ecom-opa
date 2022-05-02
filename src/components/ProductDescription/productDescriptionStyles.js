@@ -65,16 +65,19 @@ const ItemCounterWrapper = styled.div`
   flex: 0.4;
   border-radius: 12px;
 
-  p {
-    color: var(--orange);
-    font-weight: bold;
-    font-size: 3rem;
-  }
-
   p:nth-child(2) {
     color: var(--black-lightbox-background);
     font-size: 2.25rem;
   }
+`;
+
+const Button = styled.button`
+  color: var(--orange);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 2.25rem;
+  font-weight: bolder;
 `;
 
 const ATCButton = styled.button`
@@ -90,9 +93,24 @@ const ATCButton = styled.button`
   justify-content: center;
   font-family: inherit;
   font-size: 1.6rem;
+
+  svg path {
+    fill: white;
+  }
 `;
 
+const styles = {
+  oldPrice: {
+    margin: "1.5rem 0 4rem 0",
+    fontSize: "2rem",
+    fontWeight: "500",
+    color: "var(--grayish-blue",
+    textDecoration: "line-through",
+  },
+};
+
 export {
+  styles,
   ProductHeadline,
   Description,
   ProductPriceWrapper,
@@ -104,4 +122,5 @@ export {
   CTAWrapper,
   ATCButton,
   ItemCounterWrapper,
+  Button,
 };
