@@ -86,13 +86,15 @@ const ATCButton = styled.button`
   font-weight: bold;
   padding: 1rem 4rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   flex: 0.6;
   justify-content: center;
   font-family: inherit;
   font-size: 1.6rem;
+  width: 100%;
+  margin: 0 auto;
 
   svg path {
     fill: white;

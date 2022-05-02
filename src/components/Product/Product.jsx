@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ProductLightbox, ProductDescription } from "../../components";
+import { ProductLightbox, ProductDescription, Cart } from "../../components";
 
 const Product = () => {
   return (

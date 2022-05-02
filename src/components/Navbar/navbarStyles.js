@@ -7,8 +7,14 @@ const NavWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: 1.8rem;
-  border-bottom: 1px solid var(--grayish-blue);
   padding: 3rem 0 4rem 0;
+  position: relative;
+
+  &::after {
+    border-bottom: 1px solid var(-light-grayish-blue);
+    width: 100px;
+    position: absolute;
+  }
 `;
 
 const LogoContainer = styled.div`

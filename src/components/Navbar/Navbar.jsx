@@ -12,6 +12,7 @@ import {
   ProfileInformation,
   ProfileImage,
 } from "./navbarStyles";
+import Cart from "../Cart/Cart";
 
 const Navbar = () => {
   return (
@@ -28,6 +29,7 @@ const Navbar = () => {
       </LinkContainer>
       <ProfileInformation>
         <img style={{ cursor: "pointer" }} src={cart} alt='cart-logo' />
+        <Cart />
         <ProfileImage src={profileImg}></ProfileImage>
       </ProfileInformation>
     </NavWrapper>
