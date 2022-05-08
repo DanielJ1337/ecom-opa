@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import logo from "../../assets/images/logo.svg";
-import cart from "../../assets/images/icon-cart.svg";
+import cartLogo from "../../assets/images/icon-cart.svg";
 import profileImg from "../../assets/images/image-avatar.png";
 
 import {
@@ -15,11 +15,12 @@ import {
   BasketSizeContainer,
 } from "./navbarStyles";
 import Cart from "../Cart/Cart";
-import { useProductProvider } from "../../lib/productContext";
+import { useCart } from "../../lib/cartContext";
 
 const Navbar = () => {
   const [toggleCart, setToggleCart] = useState(false);
-  const product = useProductProvider();
+  const state = useCart();
+
   return (
     <NavWrapper>
       <LogoContainer>
@@ -37,10 +38,10 @@ const Navbar = () => {
           onClick={(e) => {
             toggleCart ? setToggleCart(false) : setToggleCart(true);
           }}
-          src={cart}
+          src={cartLogo}
           alt='cart-logo'
         />
-        <BasketSizeContainer>{product.cartSize}</BasketSizeContainer>
+        <BasketSizeContainer>{state.cart.length}</BasketSizeContainer>
         {toggleCart && <Cart />}
 
         <ProfileImage src={profileImg}></ProfileImage>

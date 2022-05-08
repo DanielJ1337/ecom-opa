@@ -1,21 +1,15 @@
 import React from "react";
 
-import { ProductLightbox, ProductDescription, Cart } from "../../components";
+import { ProductLightbox, ProductDescription } from "../../components";
+
+import { ProductContainer, styles } from "./productStyles";
 
 const Product = () => {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "5rem",
-        placeContent: " center",
-        height: "80vh",
-        width: "100vw",
-      }}>
+    <ProductContainer style={styles.container}>
       <ProductLightbox />
       <ProductDescription />
-    </div>
+    </ProductContainer>
   );
 };
 

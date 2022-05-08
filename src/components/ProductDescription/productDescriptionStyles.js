@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const ProductDescriptionWrapper = styled.div`
   text-align: left;
-  max-width: 65%;
+  flex: 0.5;
+  max-width: 35%;
 `;
 
 const ProductHeadlineWrapper = styled.div``;
@@ -52,6 +53,7 @@ const ProductDiscount = styled.p`
 const CTAWrapper = styled.div`
   margin-top: 3rem;
   display: flex;
+  max-width: 80%;
 `;
 
 const ItemCounterWrapper = styled.div`

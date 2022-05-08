@@ -15,12 +15,17 @@ import {
   styles,
   Button,
 } from "./productDescriptionStyles";
-
-import cartIcon from "../../assets/images/icon-cart.svg";
+import { useCart, useDispatchCart } from "../../lib/cartContext";
 import { useProductProvider } from "../../lib/productContext";
-const ProductDescription = () => {
-  const product = useProductProvider();
 
+const ProductDescription = () => {
+  const dispatch = useDispatchCart();
+  const { product, productAmount, increaseAmount, decreaseAmount } =
+    useProductProvider();
+
+  const addToCart = () => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
   return (
     <ProductDescriptionWrapper>
       <ProductHeadlineWrapper>
@@ -41,21 +46,21 @@ const ProductDescription = () => {
         <ItemCounterWrapper>
           <Button
             onClick={(e) => {
-              product.decreaseAmount();
+              decreaseAmount();
             }}>
             -
           </Button>
-          <p>{product.productAmount}</p>
+          <p>{product.amount}</p>
           <Button
             onClick={(e) => {
-              product.increaseAmount();
+              increaseAmount();
             }}>
             +
           </Button>
         </ItemCounterWrapper>
         <ATCButton
           onClick={(e) => {
-            product.addToCart();
+            addToCart(product);
           }}>
           <div style={{ marginRight: "2rem" }}>
             <svg width='22' height='20' xmlns='http://www.w3.org/2000/svg'>

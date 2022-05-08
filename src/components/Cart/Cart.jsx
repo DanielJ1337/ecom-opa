@@ -15,7 +15,10 @@ import {
   ProductInfoWrapper,
 } from "./cartStyles";
 
+import { useCart } from "../../lib/cartContext";
+
 const Cart = () => {
+  const state = useCart();
   return (
     <CartWrapper>
       <HeadlineWrapper>
@@ -27,14 +30,14 @@ const Cart = () => {
         <ProductInfoWrapper>
           <p style={{ marginBottom: ".5rem" }}>Fall Limited Edition Sneakers</p>
           <p>
-            $125.00 x 3
+            $125.00 x {state.amount}
             <span
               style={{
                 color: "var(--black-lightbox-background)",
                 fontWeight: "700",
               }}>
               {" "}
-              $375.00
+              {"$" + state.total}
             </span>
           </p>
         </ProductInfoWrapper>

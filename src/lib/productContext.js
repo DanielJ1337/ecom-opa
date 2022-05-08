@@ -16,31 +16,39 @@ export const useProduct = () => {
 };
 
 export const useProductProvider = () => {
-  const [productAmount, setProductAmount] = useState(0);
-  const [cartSize, setCartSize] = useState(0);
+  // const [productAmount, setProductAmount] = useState(0);
+
+  const initialState = {
+    name: "Fall Limited Edition Sneakers",
+    amount: 0,
+    total: 0,
+  };
+  // const [product, setProduct] = useState(initialState);
+
+  const [product, setProduct] = useState(initialState);
 
   const increaseAmount = () => {
-    setProductAmount((prevItem) => prevItem + 1);
+    setProduct({
+      ...product,
+      amount: product.amount + 1,
+      total: product.total + product.amount * 125.0,
+    });
   };
 
   const decreaseAmount = () => {
-    if (productAmount <= 0) {
-      return;
+    if (product.amount <= 0) {
+      setProduct({ ...product, amount: product.amount, total: product.total });
     } else {
-      setProductAmount((prevItem) => prevItem - 1);
+      setProduct({
+        ...product,
+        amount: product.amount - 1,
+        total: product.total - product.amount * 125.0,
+      });
     }
   };
 
-  const addToCart = () => {
-    setCartSize(productAmount);
-    console.log("cartsize was set to: ", cartSize);
-    console.log("value of productAmount is: ", productAmount);
-  };
-
   return {
-    productAmount,
-    cartSize,
-    addToCart,
+    product,
     increaseAmount,
     decreaseAmount,
   };

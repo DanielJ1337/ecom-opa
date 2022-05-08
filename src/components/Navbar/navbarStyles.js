@@ -33,6 +33,7 @@ const LinkContainer = styled.ul`
 const LinkItem = styled.li`
   margin-left: 4.5rem;
   color: var(--dark-grayish-blue);
+  cursor: pointer;
 `;
 
 const ProfileInformation = styled.div`
